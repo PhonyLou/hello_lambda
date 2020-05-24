@@ -1,0 +1,27 @@
+service: qilin-lambda-advance-3
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: java8
+  region: ap-southeast-1
+  role: arn:aws:iam::494526681395:role/for-aws-training-2
+  timeout: 30
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource: ''
+package:
+  artifact: target/qilin-lambda-advance-3.jar
+
+functions:
+  currentTime:
+    handler: com.serverless.Handler
+    events:
+      - cloudwatchEvent:
+          event:
+            source:
+              - 'aws.events'
+            resources: 'arn:aws:events:ap-southeast-1:494526681395:rule/qilin-lambda-advance-3-cronjob'
