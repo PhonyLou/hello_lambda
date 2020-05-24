@@ -64,4 +64,9 @@ $ sls deploy
 $ serverless invoke --function currentTime --log
 ```
 
+### Advanced 3 - Cloudwatch trigger lambda to read file regularly
+
+create a rule in cloudwatch, and trigger Lambda regularly
+
+
 
