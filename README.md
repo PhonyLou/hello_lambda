@@ -43,6 +43,7 @@ $ curl https://w4rin5c5lb.execute-api.ap-southeast-1.amazonaws.com/dev/ping
 $ cd qilin-lambda-basic-5
 $ mvn package
 $ sls deploy
+
 $ serverless invoke --function currentTime --log
 ```
 
